@@ -8,10 +8,10 @@ export function buildPath(nodeId, db, categoriesById, rootId) {
   const seen = new Set();
   while (current && !seen.has(current._id)) {
     seen.add(current._id);
-    path.unshift(current.title);
+    path.unshift({ id: current._id, title: current.title });
     current = current.parentId ? db[current.parentId] : null;
   }
-  if (!path.length && rootId && db[rootId]) return [db[rootId].title];
+  if (!path.length && rootId && db[rootId]) return [{ id: rootId, title: db[rootId].title }];
   return path;
 }
 

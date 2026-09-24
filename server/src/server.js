@@ -1,7 +1,13 @@
 import 'dotenv/config';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from 'express';
 import cors from 'cors';
 import { MongoClient } from 'mongodb';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = Number(process.env.PORT || 4000);
@@ -107,6 +113,30 @@ app.get('/api/nodes/:nodeId', async (req, res, next) => {
   } catch (error) { next(error); }
 });
 
+app.get('/api/details/:nodeId', async (req, res, next) => {
+  try {
+    const node = await nodes.findOne({ _id: req.params.nodeId }, { projection: { title: 1, slug: 1 } });
+    if (!node) return res.status(404).json({ error: 'Node not found' });
+
+    const detailsDir = path.join(__dirname, '..', 'details');
+    const candidates = [node.slug, node.title, req.params.nodeId.split(':').pop()]
+      .filter(Boolean)
+      .map(s => s.toLowerCase().replace(/\s+/g, '-'));
+
+    let content = null;
+    if (fs.existsSync(detailsDir)) {
+      const files = fs.readdirSync(detailsDir).filter(f => f.endsWith('.md'));
+      for (const name of candidates) {
+        const match = files.find(f => f.toLowerCase().replace('.md', '') === name);
+        if (match) { content = fs.readFileSync(path.join(detailsDir, match), 'utf8'); break; }
+      }
+    }
+
+    if (!content) return res.status(404).json({ error: 'No detail file found' });
+    res.json({ content });
+  } catch (error) { next(error); }
+});
+
 app.get('/api/search', async (req, res, next) => {
   try {
     const q = String(req.query.q || '').trim();
@@ -116,7 +146,6 @@ app.get('/api/search', async (req, res, next) => {
     const results = await nodes.find(filter, { projection: { _id: 1, title: 1, type: 1, icon: 1, topicId: 1, description: 1 } }).limit(20).toArray();
     res.json({ results });
   } catch (error) {
-    // Text index may not exist yet; use a regex fallback for first-run installations.
     try {
       const q = String(req.query.q || '').trim();
       const filter = { title: { $regex: q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), $options: 'i' } };

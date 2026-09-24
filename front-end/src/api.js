@@ -24,6 +24,10 @@ export async function searchNodes(query, topicId) {
   return (await getJson(`${API_ROOT}/search?${params}`)).results || [];
 }
 
+export async function loadDetails(nodeId) {
+  return getJson(`${API_ROOT}/details/${encodeURIComponent(nodeId)}`);
+}
+
 export function routeFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return { topicId: params.get('topic') || 'aws', nodeId: params.get('node') || '' };
