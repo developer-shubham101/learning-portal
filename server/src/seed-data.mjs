@@ -28,9 +28,21 @@ function readJsonl(fileName) {
 async function importCollection(db, collectionName, fileName) {
   const collection = db.collection(collectionName);
   const documents = readJsonl(fileName);
-  await collection.deleteMany({});
-  if (documents.length) await collection.insertMany(documents, { ordered: false });
-  return documents.length;
+
+  const seen = new Map();
+  const dupes = [];
+  for (const doc of documents) {
+    const key = String(doc._id ?? JSON.stringify(doc));
+    if (seen.has(key)) dupes.push(key);
+    else seen.set(key, doc);
+  }
+  if (dupes.length) console.warn(`  [${collectionName}] ${dupes.length} duplicate(s) skipped: ${dupes.slice(0, 5).join(', ')}${dupes.length > 5 ? ` … +${dupes.length - 5} more` : ''}`);
+
+  const unique = [...seen.values()];
+  if (unique.length) {
+    await Promise.all(unique.map(doc => collection.replaceOne({ _id: doc._id }, doc, { upsert: true })));
+  }
+  return unique.length;
 }
 
 async function main() {
