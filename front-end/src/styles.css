@@ -128,7 +128,7 @@ aside{
 .sys-row span:first-child{color:var(--muted)}
 .sys-row span:last-child{color:var(--green)}
 
-.cat-list{display:flex;flex-direction:column;gap:2px}
+.cat-list{display:flex;flex-direction:column;gap:2px;max-height:180px;overflow-y:auto;overflow-x:hidden}
 .cat-item{
   display:flex;align-items:center;gap:7px;padding:5px 7px;
   border-radius:3px;cursor:pointer;font-size:9px;color:var(--muted);
