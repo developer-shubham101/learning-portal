@@ -1,10 +1,10 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { App } from "./App.jsx";
-import "./styles.css";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { App, StandaloneNodePage } from './App.jsx';
+import { routeFromUrl } from './api';
+import './styles.css';
 
-createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const route = routeFromUrl();
+createRoot(document.getElementById('root')).render(
+  <React.StrictMode>{route.nodeId ? <StandaloneNodePage nodeId={route.nodeId} /> : <App />}</React.StrictMode>
 );

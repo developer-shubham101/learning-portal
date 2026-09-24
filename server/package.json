@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
-    "import": "node scripts/import.js"
+    "seed:data": "node src/seed-data.mjs"
   },
   "dependencies": {
     "cors": "latest",

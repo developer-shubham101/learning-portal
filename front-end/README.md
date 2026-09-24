@@ -1,46 +1,72 @@
-# Learning Portal — React + JSON API
+# Learning Portal — React + Express + MongoDB Knowledge Graph
 
-This is a React conversion of the uploaded AWS learning console. The original design is a three-column guided-learning UI: expandable tree, scan-friendly cards, and a right-side intelligence panel. The source also used jsTree for the service tree; this version uses `react-arborist` so the tree is a native React component. The original AWS content is exported as JSON and loaded with `fetch()` at runtime.
+This version uses the existing AWS/Databricks learning content as the seed curriculum, but stores it as a normalized, interlinked MongoDB knowledge graph.
 
-## Run with npx http-server
+## Architecture
 
-```bash
-npm install
-npm run build
-npx http-server dist -p 8080
+```text
+MongoDB
+├── topics       # AWS, Databricks, ...
+├── categories   # Compute, Storage, ...
+├── nodes        # Fargate, ECS, Docker, Virtual Machine, ...
+├── tags         # reusable concepts / tags
+└── links        # CHILD / TAG / MENTIONS graph edges
+        │
+        ▼
+Express API
+        │
+        ▼
+React learning explorer
 ```
 
-Open `http://localhost:8080/`.
+The important change is that concepts are no longer trapped inside an AWS JSON document. A stable node such as `tag:docker` can be referenced from AWS, Databricks, or future learning topics.
 
-## Development
+## Run MongoDB
 
 ```bash
+cd server
+docker compose up -d
+```
+
+## Import / regenerate data
+
+```bash
+cd server
 npm install
+npm run seed:data
+```
+
+Then import the five JSONL files as described in `server/README.md`.
+
+## Run API
+
+```bash
+cd server
+cp .env.example .env
 npm run dev
 ```
 
-## API/data model
+Default API: `http://localhost:4000`
 
-The app fetches:
+## Run React
 
-`/api/topics/aws.json`
-
-A different topic can use the same UI:
-
-`/api/topics/databricks.json`
-
-Then open:
-
-`/?topic=databricks`
-
-For a separate API server, build with:
+From the project root:
 
 ```bash
-VITE_API_ROOT=http://localhost:8081/topics npm run build
+npm install
+VITE_API_ROOT=http://localhost:4000/api npm run dev
 ```
 
-The topic JSON schema is documented in `public/api/topics/README.txt`.
+## Concept navigation
 
-## Progress
+A user can now follow a learning path instead of staying inside one product:
 
-Learning progress is stored in `localStorage` under a topic-specific key, so AWS and Databricks progress do not collide.
+1. Explore AWS.
+2. Open ECS or Fargate.
+3. Click **Docker** wherever it appears as a tag or inline concept.
+4. A compact concept preview appears.
+5. Click **OPEN FULL CONCEPT** to open Docker in a new tab.
+6. From Docker, click another linked concept such as **Virtual Machine**.
+7. Continue following the graph.
+
+The same node IDs work across future topics, so the portal can grow into a general learning graph rather than a collection of isolated product pages.

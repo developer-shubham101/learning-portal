@@ -1,0 +1,161 @@
+{"_id":"tag:compute","name":"Compute","kind":"concept","nodeIds":["aws:aws"]}
+{"_id":"tag:storage","name":"Storage","kind":"concept","nodeIds":["aws:aws","databricks:lakehouse"]}
+{"_id":"tag:database","name":"Database","kind":"concept","nodeIds":["aws:aws"]}
+{"_id":"tag:networking","name":"Networking","kind":"concept","nodeIds":["aws:aws"]}
+{"_id":"tag:security","name":"Security","kind":"concept","nodeIds":["aws:aws"]}
+{"_id":"tag:ai-ml","name":"AI/ML","kind":"concept","nodeIds":["aws:aws"]}
+{"_id":"tag:ec2","name":"EC2","kind":"concept","nodeIds":["aws:compute"]}
+{"_id":"tag:lambda","name":"Lambda","kind":"concept","nodeIds":["aws:compute"]}
+{"_id":"tag:ecs","name":"ECS","kind":"concept","nodeIds":["aws:compute","aws:fargate"]}
+{"_id":"tag:fargate","name":"Fargate","kind":"concept","nodeIds":["aws:compute"]}
+{"_id":"tag:virtual-machine","name":"Virtual Machine","kind":"concept","nodeIds":["aws:ec2"]}
+{"_id":"tag:ami","name":"AMI","kind":"concept","nodeIds":["aws:ec2"]}
+{"_id":"tag:instances","name":"Instances","kind":"concept","nodeIds":["aws:ec2"]}
+{"_id":"tag:auto-scaling","name":"Auto Scaling","kind":"concept","nodeIds":["aws:ec2"]}
+{"_id":"tag:functions","name":"Functions","kind":"concept","nodeIds":["aws:lambda"]}
+{"_id":"tag:events","name":"Events","kind":"concept","nodeIds":["aws:lambda"]}
+{"_id":"tag:serverless","name":"Serverless","kind":"concept","nodeIds":["aws:lambda","aws:fargate","aws:efs","aws:aurora","aws:athena"]}
+{"_id":"tag:triggers","name":"Triggers","kind":"concept","nodeIds":["aws:lambda"]}
+{"_id":"tag:docker","name":"Docker","kind":"concept","nodeIds":["aws:ecs","aws:fargate"]}
+{"_id":"tag:containers","name":"Containers","kind":"concept","nodeIds":["aws:ecs","aws:fargate"]}
+{"_id":"tag:tasks","name":"Tasks","kind":"concept","nodeIds":["aws:ecs"]}
+{"_id":"tag:services","name":"Services","kind":"concept","nodeIds":["aws:ecs"]}
+{"_id":"tag:eks","name":"EKS","kind":"concept","nodeIds":["aws:fargate"]}
+{"_id":"tag:s3","name":"S3","kind":"concept","nodeIds":["aws:storage","aws:athena"]}
+{"_id":"tag:ebs","name":"EBS","kind":"concept","nodeIds":["aws:storage"]}
+{"_id":"tag:efs","name":"EFS","kind":"concept","nodeIds":["aws:storage"]}
+{"_id":"tag:glacier","name":"Glacier","kind":"concept","nodeIds":["aws:storage"]}
+{"_id":"tag:buckets","name":"Buckets","kind":"concept","nodeIds":["aws:s3"]}
+{"_id":"tag:objects","name":"Objects","kind":"concept","nodeIds":["aws:s3"]}
+{"_id":"tag:versioning","name":"Versioning","kind":"concept","nodeIds":["aws:s3"]}
+{"_id":"tag:lifecycle","name":"Lifecycle","kind":"concept","nodeIds":["aws:s3"]}
+{"_id":"tag:volumes","name":"Volumes","kind":"concept","nodeIds":["aws:ebs"]}
+{"_id":"tag:iops","name":"IOPS","kind":"concept","nodeIds":["aws:ebs"]}
+{"_id":"tag:snapshots","name":"Snapshots","kind":"concept","nodeIds":["aws:ebs"]}
+{"_id":"tag:encryption","name":"Encryption","kind":"concept","nodeIds":["aws:ebs","aws:kms"]}
+{"_id":"tag:nfs","name":"NFS","kind":"concept","nodeIds":["aws:efs"]}
+{"_id":"tag:shared","name":"Shared","kind":"concept","nodeIds":["aws:efs"]}
+{"_id":"tag:multi-az","name":"Multi-AZ","kind":"concept","nodeIds":["aws:efs","aws:rds"]}
+{"_id":"tag:archive","name":"Archive","kind":"concept","nodeIds":["aws:glacier"]}
+{"_id":"tag:cold-storage","name":"Cold Storage","kind":"concept","nodeIds":["aws:glacier"]}
+{"_id":"tag:compliance","name":"Compliance","kind":"concept","nodeIds":["aws:glacier"]}
+{"_id":"tag:vault-lock","name":"Vault Lock","kind":"concept","nodeIds":["aws:glacier"]}
+{"_id":"tag:rds","name":"RDS","kind":"concept","nodeIds":["aws:database"]}
+{"_id":"tag:dynamodb","name":"DynamoDB","kind":"concept","nodeIds":["aws:database"]}
+{"_id":"tag:aurora","name":"Aurora","kind":"concept","nodeIds":["aws:database"]}
+{"_id":"tag:elasticache","name":"ElastiCache","kind":"concept","nodeIds":["aws:database"]}
+{"_id":"tag:sql","name":"SQL","kind":"concept","nodeIds":["aws:rds","aws:athena","databricks:databricks","databricks:analytics","databricks:databricks-sql"]}
+{"_id":"tag:read-replicas","name":"Read Replicas","kind":"concept","nodeIds":["aws:rds"]}
+{"_id":"tag:backups","name":"Backups","kind":"concept","nodeIds":["aws:rds"]}
+{"_id":"tag:nosql","name":"NoSQL","kind":"concept","nodeIds":["aws:dynamodb"]}
+{"_id":"tag:key-value","name":"Key-Value","kind":"concept","nodeIds":["aws:dynamodb"]}
+{"_id":"tag:streams","name":"Streams","kind":"concept","nodeIds":["aws:dynamodb"]}
+{"_id":"tag:global-tables","name":"Global Tables","kind":"concept","nodeIds":["aws:dynamodb"]}
+{"_id":"tag:mysql","name":"MySQL","kind":"concept","nodeIds":["aws:aurora"]}
+{"_id":"tag:postgresql","name":"PostgreSQL","kind":"concept","nodeIds":["aws:aurora"]}
+{"_id":"tag:global-db","name":"Global DB","kind":"concept","nodeIds":["aws:aurora"]}
+{"_id":"tag:redis","name":"Redis","kind":"concept","nodeIds":["aws:elasticache"]}
+{"_id":"tag:memcached","name":"Memcached","kind":"concept","nodeIds":["aws:elasticache"]}
+{"_id":"tag:cache","name":"Cache","kind":"concept","nodeIds":["aws:elasticache","aws:cloudfront"]}
+{"_id":"tag:pub-sub","name":"Pub/Sub","kind":"concept","nodeIds":["aws:elasticache"]}
+{"_id":"tag:vpc","name":"VPC","kind":"concept","nodeIds":["aws:networking"]}
+{"_id":"tag:route-53","name":"Route 53","kind":"concept","nodeIds":["aws:networking"]}
+{"_id":"tag:elb","name":"ELB","kind":"concept","nodeIds":["aws:networking"]}
+{"_id":"tag:cloudfront","name":"CloudFront","kind":"concept","nodeIds":["aws:networking"]}
+{"_id":"tag:subnets","name":"Subnets","kind":"concept","nodeIds":["aws:vpc"]}
+{"_id":"tag:route-tables","name":"Route Tables","kind":"concept","nodeIds":["aws:vpc"]}
+{"_id":"tag:security-groups","name":"Security Groups","kind":"concept","nodeIds":["aws:vpc"]}
+{"_id":"tag:nat-gateway","name":"NAT Gateway","kind":"concept","nodeIds":["aws:vpc"]}
+{"_id":"tag:dns","name":"DNS","kind":"concept","nodeIds":["aws:route-53"]}
+{"_id":"tag:routing-policies","name":"Routing Policies","kind":"concept","nodeIds":["aws:route-53"]}
+{"_id":"tag:health-checks","name":"Health Checks","kind":"concept","nodeIds":["aws:route-53"]}
+{"_id":"tag:domains","name":"Domains","kind":"concept","nodeIds":["aws:route-53"]}
+{"_id":"tag:alb","name":"ALB","kind":"concept","nodeIds":["aws:elb"]}
+{"_id":"tag:nlb","name":"NLB","kind":"concept","nodeIds":["aws:elb"]}
+{"_id":"tag:gwlb","name":"GWLB","kind":"concept","nodeIds":["aws:elb"]}
+{"_id":"tag:target-groups","name":"Target Groups","kind":"concept","nodeIds":["aws:elb"]}
+{"_id":"tag:edge-locations","name":"Edge Locations","kind":"concept","nodeIds":["aws:cloudfront"]}
+{"_id":"tag:https","name":"HTTPS","kind":"concept","nodeIds":["aws:cloudfront"]}
+{"_id":"tag:lambda-edge","name":"Lambda@Edge","kind":"concept","nodeIds":["aws:cloudfront"]}
+{"_id":"tag:iam","name":"IAM","kind":"concept","nodeIds":["aws:security"]}
+{"_id":"tag:kms","name":"KMS","kind":"concept","nodeIds":["aws:security"]}
+{"_id":"tag:waf","name":"WAF","kind":"concept","nodeIds":["aws:security"]}
+{"_id":"tag:guardduty","name":"GuardDuty","kind":"concept","nodeIds":["aws:security"]}
+{"_id":"tag:users","name":"Users","kind":"concept","nodeIds":["aws:iam"]}
+{"_id":"tag:roles","name":"Roles","kind":"concept","nodeIds":["aws:iam"]}
+{"_id":"tag:policies","name":"Policies","kind":"concept","nodeIds":["aws:iam"]}
+{"_id":"tag:mfa","name":"MFA","kind":"concept","nodeIds":["aws:iam"]}
+{"_id":"tag:cmk","name":"CMK","kind":"concept","nodeIds":["aws:kms"]}
+{"_id":"tag:key-rotation","name":"Key Rotation","kind":"concept","nodeIds":["aws:kms"]}
+{"_id":"tag:cloudhsm","name":"CloudHSM","kind":"concept","nodeIds":["aws:kms"]}
+{"_id":"tag:web-acl","name":"Web ACL","kind":"concept","nodeIds":["aws:waf"]}
+{"_id":"tag:rules","name":"Rules","kind":"concept","nodeIds":["aws:waf","aws:eventbridge"]}
+{"_id":"tag:owasp","name":"OWASP","kind":"concept","nodeIds":["aws:waf"]}
+{"_id":"tag:bot-control","name":"Bot Control","kind":"concept","nodeIds":["aws:waf"]}
+{"_id":"tag:threats","name":"Threats","kind":"concept","nodeIds":["aws:guardduty"]}
+{"_id":"tag:ml","name":"ML","kind":"concept","nodeIds":["aws:guardduty"]}
+{"_id":"tag:cloudtrail","name":"CloudTrail","kind":"concept","nodeIds":["aws:guardduty"]}
+{"_id":"tag:vpc-flow-logs","name":"VPC Flow Logs","kind":"concept","nodeIds":["aws:guardduty"]}
+{"_id":"tag:bedrock","name":"Bedrock","kind":"concept","nodeIds":["aws:ai-ml"]}
+{"_id":"tag:sagemaker","name":"SageMaker","kind":"concept","nodeIds":["aws:ai-ml"]}
+{"_id":"tag:amazon-q","name":"Amazon Q","kind":"concept","nodeIds":["aws:ai-ml"]}
+{"_id":"tag:rekognition","name":"Rekognition","kind":"concept","nodeIds":["aws:ai-ml"]}
+{"_id":"tag:foundation-models","name":"Foundation Models","kind":"concept","nodeIds":["aws:bedrock"]}
+{"_id":"tag:claude","name":"Claude","kind":"concept","nodeIds":["aws:bedrock"]}
+{"_id":"tag:llama","name":"Llama","kind":"concept","nodeIds":["aws:bedrock"]}
+{"_id":"tag:rag","name":"RAG","kind":"concept","nodeIds":["aws:bedrock"]}
+{"_id":"tag:agents","name":"Agents","kind":"concept","nodeIds":["aws:bedrock"]}
+{"_id":"tag:training","name":"Training","kind":"concept","nodeIds":["aws:sagemaker"]}
+{"_id":"tag:inference","name":"Inference","kind":"concept","nodeIds":["aws:sagemaker"]}
+{"_id":"tag:pipelines","name":"Pipelines","kind":"concept","nodeIds":["aws:sagemaker","databricks:data-engineering"]}
+{"_id":"tag:mlops","name":"MLOps","kind":"concept","nodeIds":["aws:sagemaker"]}
+{"_id":"tag:code-assistant","name":"Code Assistant","kind":"concept","nodeIds":["aws:amazon-q"]}
+{"_id":"tag:ide","name":"IDE","kind":"concept","nodeIds":["aws:amazon-q"]}
+{"_id":"tag:chat","name":"Chat","kind":"concept","nodeIds":["aws:amazon-q"]}
+{"_id":"tag:business-insights","name":"Business Insights","kind":"concept","nodeIds":["aws:amazon-q"]}
+{"_id":"tag:image-analysis","name":"Image Analysis","kind":"concept","nodeIds":["aws:rekognition"]}
+{"_id":"tag:face-detection","name":"Face Detection","kind":"concept","nodeIds":["aws:rekognition"]}
+{"_id":"tag:labels","name":"Labels","kind":"concept","nodeIds":["aws:rekognition"]}
+{"_id":"tag:video","name":"Video","kind":"concept","nodeIds":["aws:rekognition"]}
+{"_id":"tag:athena","name":"Athena","kind":"concept","nodeIds":["aws:analytics"]}
+{"_id":"tag:redshift","name":"Redshift","kind":"concept","nodeIds":["aws:analytics"]}
+{"_id":"tag:glue","name":"Glue","kind":"concept","nodeIds":["aws:analytics"]}
+{"_id":"tag:kinesis","name":"Kinesis","kind":"concept","nodeIds":["aws:analytics"]}
+{"_id":"tag:presto-trino","name":"Presto/Trino","kind":"concept","nodeIds":["aws:athena"]}
+{"_id":"tag:data-warehouse","name":"Data Warehouse","kind":"concept","nodeIds":["aws:redshift"]}
+{"_id":"tag:columnar","name":"Columnar","kind":"concept","nodeIds":["aws:redshift"]}
+{"_id":"tag:mpp","name":"MPP","kind":"concept","nodeIds":["aws:redshift"]}
+{"_id":"tag:bi","name":"BI","kind":"concept","nodeIds":["aws:redshift","databricks:analytics","databricks:databricks-sql"]}
+{"_id":"tag:etl","name":"ETL","kind":"concept","nodeIds":["aws:glue","databricks:data-engineering"]}
+{"_id":"tag:data-catalog","name":"Data Catalog","kind":"concept","nodeIds":["aws:glue"]}
+{"_id":"tag:crawlers","name":"Crawlers","kind":"concept","nodeIds":["aws:glue"]}
+{"_id":"tag:spark","name":"Spark","kind":"concept","nodeIds":["aws:glue","databricks:databricks","databricks:data-engineering"]}
+{"_id":"tag:data-streams","name":"Data Streams","kind":"concept","nodeIds":["aws:kinesis"]}
+{"_id":"tag:firehose","name":"Firehose","kind":"concept","nodeIds":["aws:kinesis"]}
+{"_id":"tag:real-time","name":"Real-time","kind":"concept","nodeIds":["aws:kinesis"]}
+{"_id":"tag:shards","name":"Shards","kind":"concept","nodeIds":["aws:kinesis"]}
+{"_id":"tag:sqs","name":"SQS","kind":"concept","nodeIds":["aws:app-integration"]}
+{"_id":"tag:sns","name":"SNS","kind":"concept","nodeIds":["aws:app-integration"]}
+{"_id":"tag:step-functions","name":"Step Functions","kind":"concept","nodeIds":["aws:app-integration"]}
+{"_id":"tag:eventbridge","name":"EventBridge","kind":"concept","nodeIds":["aws:app-integration"]}
+{"_id":"tag:queue","name":"Queue","kind":"concept","nodeIds":["aws:sqs"]}
+{"_id":"tag:fifo","name":"FIFO","kind":"concept","nodeIds":["aws:sqs"]}
+{"_id":"tag:dead-letter-queue","name":"Dead-Letter Queue","kind":"concept","nodeIds":["aws:sqs"]}
+{"_id":"tag:visibility-timeout","name":"Visibility Timeout","kind":"concept","nodeIds":["aws:sqs"]}
+{"_id":"tag:topics","name":"Topics","kind":"concept","nodeIds":["aws:sns"]}
+{"_id":"tag:subscriptions","name":"Subscriptions","kind":"concept","nodeIds":["aws:sns"]}
+{"_id":"tag:fan-out","name":"Fan-out","kind":"concept","nodeIds":["aws:sns"]}
+{"_id":"tag:push","name":"Push","kind":"concept","nodeIds":["aws:sns"]}
+{"_id":"tag:state-machines","name":"State Machines","kind":"concept","nodeIds":["aws:step-functions"]}
+{"_id":"tag:workflows","name":"Workflows","kind":"concept","nodeIds":["aws:step-functions"]}
+{"_id":"tag:retries","name":"Retries","kind":"concept","nodeIds":["aws:step-functions"]}
+{"_id":"tag:visual","name":"Visual","kind":"concept","nodeIds":["aws:step-functions"]}
+{"_id":"tag:event-bus","name":"Event Bus","kind":"concept","nodeIds":["aws:eventbridge"]}
+{"_id":"tag:targets","name":"Targets","kind":"concept","nodeIds":["aws:eventbridge"]}
+{"_id":"tag:saas-integration","name":"SaaS Integration","kind":"concept","nodeIds":["aws:eventbridge"]}
+{"_id":"tag:lakehouse","name":"Lakehouse","kind":"concept","nodeIds":["databricks:databricks"]}
+{"_id":"tag:delta-lake","name":"Delta Lake","kind":"concept","nodeIds":["databricks:lakehouse"]}
+{"_id":"tag:acid","name":"ACID","kind":"concept","nodeIds":["databricks:delta-lake"]}
+{"_id":"tag:tables","name":"Tables","kind":"concept","nodeIds":["databricks:delta-lake"]}
+{"_id":"tag:distributed","name":"Distributed","kind":"concept","nodeIds":["databricks:spark"]}
+{"_id":"tag:batch","name":"Batch","kind":"concept","nodeIds":["databricks:spark"]}

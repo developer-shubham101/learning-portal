@@ -1,0 +1,11 @@
+{"_id":"aws:compute","topicId":"aws","name":"Compute","color":"#6f9cff","glow":"#6f9cff33","bg":"radial-gradient(circle at 50% 40%,#0d2050,#03060d 70%)","nodeId":"aws:compute","order":0}
+{"_id":"aws:storage","topicId":"aws","name":"Storage","color":"#00ff9d","glow":"#00ff9d33","bg":"radial-gradient(circle at 50% 40%,#002a1a,#03060d 70%)","nodeId":"aws:storage","order":1}
+{"_id":"aws:database","topicId":"aws","name":"Database","color":"#ffc107","glow":"#ffc10733","bg":"radial-gradient(circle at 50% 40%,#2a1a00,#03060d 70%)","nodeId":"aws:database","order":2}
+{"_id":"aws:networking","topicId":"aws","name":"Networking","color":"#00e5ff","glow":"#00e5ff33","bg":"radial-gradient(circle at 50% 40%,#002a35,#03060d 70%)","nodeId":"aws:networking","order":3}
+{"_id":"aws:security","topicId":"aws","name":"Security","color":"#f87171","glow":"#f8717133","bg":"radial-gradient(circle at 50% 40%,#2a0a0a,#03060d 70%)","nodeId":"aws:security","order":4}
+{"_id":"aws:ai-ml","topicId":"aws","name":"AI & ML","color":"#c084fc","glow":"#c084fc33","bg":"radial-gradient(circle at 50% 40%,#1a0a2a,#03060d 70%)","nodeId":"aws:ai-ml","order":5}
+{"_id":"aws:analytics","topicId":"aws","name":"Analytics","color":"#fb923c","glow":"#fb923c33","bg":"radial-gradient(circle at 50% 40%,#2a1200,#03060d 70%)","nodeId":"aws:analytics","order":6}
+{"_id":"aws:app-integration","topicId":"aws","name":"App Integration","color":"#f472b6","glow":"#f472b633","bg":"radial-gradient(circle at 50% 40%,#2a0a1a,#03060d 70%)","nodeId":"aws:app-integration","order":7}
+{"_id":"databricks:lakehouse","topicId":"databricks","name":"Lakehouse","color":"#ff6b35","glow":"#ff6b3533","bg":"radial-gradient(circle at 50% 40%,#32170d,#03060d 70%)","nodeId":"databricks:lakehouse","order":0}
+{"_id":"databricks:data-engineering","topicId":"databricks","name":"Data Engineering","color":"#00e5ff","glow":"#00e5ff33","bg":"radial-gradient(circle at 50% 40%,#002a35,#03060d 70%)","nodeId":"databricks:data-engineering","order":1}
+{"_id":"databricks:analytics","topicId":"databricks","name":"Analytics","color":"#c084fc","glow":"#c084fc33","bg":"radial-gradient(circle at 50% 40%,#1a0a2a,#03060d 70%)","nodeId":"databricks:analytics","order":2}

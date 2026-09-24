@@ -1,0 +1,2 @@
+{"_id":"aws","id":"aws","title":"AWS","brand":"AWS // SHIELD","subtitle":"DEV CONSOLE","description":"AWS architecture and services guided learning content.","rootNodeId":"aws:aws","status":"published"}
+{"_id":"databricks","id":"databricks","title":"Databricks","brand":"DATABRICKS // SHIELD","subtitle":"DATA CONSOLE","description":"Example topic using the same learning portal schema. Replace or expand this JSON with your real Databricks learning content.","rootNodeId":"databricks:databricks","status":"published"}

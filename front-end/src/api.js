@@ -1,24 +1,34 @@
-const API_BASE = import.meta.env.VITE_API_ROOT || 'http://127.0.0.1:4000';
+const API_ROOT = import.meta.env.VITE_API_ROOT || 'http://127.0.0.1:4000/api';
+
+async function getJson(url) {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Request failed (${res.status})`);
+  return res.json();
+}
 
 export async function loadTopics() {
-  const res = await fetch(`${API_BASE}/api/topics`, { cache: 'no-store' });
-  if (!res.ok) throw new Error(`Could not load topic index (${res.status})`);
-  return (await res.json()).topics || [];
+  return (await getJson(`${API_ROOT}/topics`)).topics || [];
 }
 
 export async function loadTopic(topicId = 'aws') {
-  const res = await fetch(`${API_BASE}/api/topics/${encodeURIComponent(topicId)}`, { cache: 'no-store' });
-  if (!res.ok) throw new Error(`Could not load topic "${topicId}" (${res.status})`);
-  return res.json();
+  return getJson(`${API_ROOT}/topics/${encodeURIComponent(topicId)}`);
 }
 
-export async function fetchNode(topicId, nodeId) {
-  const res = await fetch(`${API_BASE}/api/topics/${encodeURIComponent(topicId)}/nodes/${encodeURIComponent(nodeId)}`, { cache: 'no-store' });
-  if (!res.ok) return null;
-  return res.json();
+export async function loadNode(nodeId) {
+  return getJson(`${API_ROOT}/nodes/${encodeURIComponent(nodeId)}`);
 }
 
-export function topicFromUrl() {
+export async function searchNodes(query, topicId) {
+  const params = new URLSearchParams({ q: query });
+  if (topicId) params.set('topicId', topicId);
+  return (await getJson(`${API_ROOT}/search?${params}`)).results || [];
+}
+
+export function routeFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('topic') || 'aws';
+  return { topicId: params.get('topic') || 'aws', nodeId: params.get('node') || '' };
+}
+
+export function openNodeInNewTab(nodeId) {
+  window.open(`${window.location.origin}${window.location.pathname}?node=${encodeURIComponent(nodeId)}`, '_blank', 'noopener,noreferrer');
 }
