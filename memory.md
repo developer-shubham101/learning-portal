@@ -18,6 +18,14 @@ Core learning loop:
 learning-portal-react/
 ├── front-end/
 │   ├── src/
+│   │   ├── components/
+│   │   │   ├── ConceptPreview.jsx
+│   │   │   ├── Detail.jsx
+│   │   │   ├── LinkText.jsx
+│   │   │   ├── MdRender.jsx
+│   │   │   └── StandaloneNodePage.jsx
+│   │   ├── hooks/
+│   │   │   └── useProgress.js
 │   │   ├── data/
 │   │   ├── App.jsx
 │   │   ├── api.js
@@ -78,15 +86,15 @@ URL query-param routing — no React Router.
 - `openNodeInNewTab(nodeId)` — opens `?node=<nodeId>` in new tab
 - `navigateTopic(id)` — pushes `?topic=<id>` and fires `popstate`
 
-### Key Components (all in `App.jsx`)
+### Key Components
 
-- `App` — main layout, state, routing, tree sync
-- `Detail` — right panel full concept view; `d-name` is a clickable `d-name-btn` button that opens `ConceptPreview`
-- `ConceptPreview` — modal popup with 5 tabs (see below)
-- `StandaloneNodePage` — full-page concept view for `?node=` route; adds `standalone-mode` class to body
-- `LinkText` — inline clickable concept links (linear scan, no regex)
-- `MdRender` — lightweight markdown renderer (headings, code blocks, bold, inline code, bullet lists); no external deps; uses `dangerouslySetInnerHTML` only for inline bold/code
-- `Section`, `Profile`, `Row` — layout helpers in Detail
+- `App.jsx` — main layout, state, routing, tree sync; re-exports `StandaloneNodePage`
+- `components/Detail.jsx` — right panel full concept view; `d-name` is a clickable `d-name-btn` button that opens `ConceptPreview`; includes `Section`, `Profile`, `Row` helpers and `categoryMeta`
+- `components/ConceptPreview.jsx` — modal popup with 5 tabs (see below)
+- `components/StandaloneNodePage.jsx` — full-page concept view for `?node=` route; adds `standalone-mode` class to body
+- `components/LinkText.jsx` — inline clickable concept links (linear scan, no regex)
+- `components/MdRender.jsx` — lightweight markdown renderer (headings, code blocks, bold, inline code, bullet lists); no external deps; uses `dangerouslySetInnerHTML` only for inline bold/code
+- `hooks/useProgress.js` — localStorage progress hook keyed by `learning-progress:<topicId>`
 
 ### ConceptPreview Tabs
 
